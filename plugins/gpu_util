@@ -1,0 +1,37 @@
+#!/bin/bash
+
+gpu_max=5
+
+if [ "$1" == "config" ]; then
+
+echo "
+graph_title gpu_utilization
+graph_vlabel pct
+"
+for i in $(seq 0 $gpu_max); do
+        echo "gpu$i.label gpu$i"
+done;
+echo "
+graph_scale no
+graph_category owocki_custom
+"
+exit 0
+fi
+
+
+
+calc () {
+    bc -l <<< "$@"
+}
+
+i=0
+for i in $(seq 0 $gpu_max); do
+	output_line_number=$(calc 9 + 3*$i);
+	echo -n "gpu$i.value "; DISPLAY=:0 nvidia-smi  | head -n $output_line_number | tail -n 1 | awk '{print $13}' | sed 's/%//g'
+
+done 
+
+
+
+
+

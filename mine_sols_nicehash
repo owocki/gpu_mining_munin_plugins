@@ -1,0 +1,41 @@
+#!/bin/bash
+
+gpu_max=5
+
+if [ "$1" == "config" ]; then
+
+for i in $(seq 0 $gpu_max); do
+        echo "GPU$i.label GPU$i"
+done;
+
+
+echo "
+graph_title sols - coins4all
+graph_category owocki_custom
+graph_scale no
+graph_category sols
+"
+exit 0
+fi
+
+
+
+calc () {
+    bc -l <<< "$@"
+}
+
+output=$(cat /var/log/mine/mine_coins4all.log | grep "sols=" |  tail -n 6);
+echo "$output" | while read line; do
+	label="GPU"$(echo $line | awk '{print $2}' | sed 's/\]//g')
+	sols=$(echo $line | awk '{print $5}' | sed 's/sols=//g')
+	echo -n "$label.value "; DISPLAY=:0 echo $sols
+done
+
+
+
+
+
+
+
+
+

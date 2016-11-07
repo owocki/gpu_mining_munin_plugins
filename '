@@ -1,0 +1,20 @@
+#!/bin/sh
+case $1 in
+   config)
+        cat <<'EOM'
+graph_title fan speed
+graph_vlabel percent
+gpu0.label 5830_0
+gpu1.label 5830_1
+gpu2.label 5830_2
+gpu3.label 6870
+
+EOM
+        exit 0;;
+esac
+
+echo -n "gpu0.value "; DISPLAY=:0.0 aticonfig --pplib-cmd "get fanspeed 0" | awk '/Result/ {print $4}' | cut -d "%" -f1
+echo -n "gpu1.value "; DISPLAY=:0.1 aticonfig --pplib-cmd "get fanspeed 0" | awk '/Result/ {print $4}' | cut -d "%" -f1
+echo -n "gpu2.value "; DISPLAY=:0.2 aticonfig --pplib-cmd "get fanspeed 0" | awk '/Result/ {print $4}' | cut -d "%" -f1
+echo -n "gpu3.value "; DISPLAY=:0.3 aticonfig --pplib-cmd "get fanspeed 0" | awk '/Result/ {print $4}' | cut -d "%" -f1
+
