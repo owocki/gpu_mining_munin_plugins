@@ -6,18 +6,18 @@ Creates graphs like this:
 
 # Productivity
 
-<img src='/miner/miner/mine_sols_coins4all-day.png'/>
-<img src='/miner/miner/mine_sols_nicehash-day.png'/>
+<img src='https://github.com/owocki/gpu_mining_munin_plugins/raw/master/img/mine_sols_coins4all-day.png'/>
+<img src='https://github.com/owocki/gpu_mining_munin_plugins/raw/master/img/mine_sols_nicehash-day.png'/>
 
 <h1>Heat</h1>
 
-<img src='/miner/miner/gpu_temp-day.png'/>
-<img src='/miner/miner/sensors_temp-day.png' />
-<img src='/miner/miner/gpu_util-day.png'/>
-<img src='/miner/miner/cpu-day.png'/>
+<img src='https://github.com/owocki/gpu_mining_munin_plugins/raw/master/img/gpu_temp-day.png'/>
+<img src='https://github.com/owocki/gpu_mining_munin_plugins/raw/master/img/sensors_temp-day.png' />
+<img src='https://github.com/owocki/gpu_mining_munin_plugins/raw/master/img/gpu_util-day.png'/>
+<img src='https://github.com/owocki/gpu_mining_munin_plugins/raw/master/img/cpu-day.png'/>
 
 <h1>More<h1>
 
-<img src='/miner/miner/load-day.png'/>
-<img src='/miner/miner/uptime-day.png'/>
+<img src='https://github.com/owocki/gpu_mining_munin_plugins/raw/master/img/load-day.png'/>
+<img src='https://github.com/owocki/gpu_mining_munin_plugins/raw/master/img/uptime-day.png'/>
 
